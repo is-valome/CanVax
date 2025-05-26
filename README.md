@@ -1,3 +1,4 @@
+![CanVax Cover](./readme-resources/thumbnail.png)  <!-- Replace with your actual file name -->
 # CanVax – Emotion-Driven Art Generator
 
 ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/is-valome/CanVax?include_prereleases)
@@ -85,3 +86,6 @@ Want to support the project? Feel free to star the repo or reach out.
 [(Back to top)](#📚-table-of-contents)
 
 This project is licensed under the [MIT License](./LICENSE).
+
+
+
