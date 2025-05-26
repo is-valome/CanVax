@@ -1,10 +1,11 @@
 # CanVax – Emotion-Driven Art Generator
 
-![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/yourusername/CanVax?include_prereleases)
-![GitHub last commit](https://img.shields.io/github/last-commit/yourusername/CanVax)
-![GitHub issues](https://img.shields.io/github/issues/yourusername/CanVax)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/yourusername/CanVax)
-![GitHub](https://img.shields.io/github/license/yourusername/CanVax)
+![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/is-valome/CanVax?include_prereleases)
+![GitHub last commit](https://img.shields.io/github/last-commit/is-valome/CanVax)
+![GitHub issues](https://img.shields.io/github/issues/is-valome/CanVax)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/is-valome/CanVax)
+![GitHub](https://img.shields.io/github/license/is-valome/CanVax)
+
 
 CanVax is a SwiftUI iOS app that transforms your mood into generative art. Using CoreML, it detects emotions from your facial expressions or written journal entries and renders abstract, expressive artwork using SwiftUI’s Canvas API.
 
