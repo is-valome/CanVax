@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct LaunchScreen: View {
+    @Environment(\.colorScheme) var colorScheme
+    
     var body: some View {
-        Text("Hello, World!")
+        Image(colorScheme == .dark ? "black_canvax" : "white_canvax")
+            .resizable()
+            .scaledToFit()
+            .frame(width: 128, height: 128)
     }
 }
 
