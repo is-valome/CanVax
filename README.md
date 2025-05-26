@@ -1,6 +1,6 @@
 # CanVax – Emotion-Driven Art Generator
 
-![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/yourusername/CanVax?include_prereleases)
+![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/is-valome/CanVax?include_prereleases)
 ![GitHub last commit](https://img.shields.io/github/last-commit/yourusername/CanVax)
 ![GitHub issues](https://img.shields.io/github/issues/yourusername/CanVax)
 ![GitHub pull requests](https://img.shields.io/github/issues-pr/yourusername/CanVax)
