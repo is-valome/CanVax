@@ -3,7 +3,6 @@
 ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/is-valome/CanVax?include_prereleases)
 ![GitHub last commit](https://img.shields.io/github/last-commit/is-valome/CanVax)
 ![GitHub issues](https://img.shields.io/github/issues/is-valome/CanVax)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/is-valome/CanVax)
 ![GitHub](https://img.shields.io/github/license/is-valome/CanVax)
 
 
