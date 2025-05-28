@@ -6,7 +6,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
         // Handle app launch logic here (e.g., splash screen setup)
-        print("Canvax: App has launched.")
+        pd_print("Canvax: App has launched.")
         return true
     }
 } 
