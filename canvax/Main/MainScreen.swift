@@ -7,66 +7,57 @@
 
 import SwiftUI
 
+// Gallery Screen
 struct MainScreen: View {
-    @State private var isArts = true
-    @State private var shimmerID = UUID()
+    @State private var selectedTab = 0
+    
+    init() {
+        // Set tab bar background to solid color
+        let appearance = UITabBarAppearance()
+        appearance.configureWithDefaultBackground()
+        appearance.backgroundColor = .systemBackground // This will automatically adapt to light/dark mode
+        UITabBar.appearance().standardAppearance = appearance
+        UITabBar.appearance().scrollEdgeAppearance = appearance
+    }
     
     var body: some View {
-        NavigationStack {
-            VStack(spacing: 0) {
-                // CanVax-style header
-                HStack {
-                    HStack {
-                        Text("Gallery •")
-                            .font(.system(size: 34, weight: .bold))
-                        Button(action: {
-                            pd_print("🔍 DEBUG: Button tapped - Current state: \(isArts ? "Arts" : "Loop")")
-                            HapticManager.light()
-                            // Optimize state changes
-                            Task { @MainActor in
-                                withAnimation(.smooth(duration: 0.1)) {
-                                    isArts.toggle()
-                                    shimmerID = UUID()
-                                    pd_print("🔄 DEBUG: State changed to: \(isArts ? "Arts" : "Loop")")
-                                    pd_print("📱 DEBUG: ShimmerID updated: \(shimmerID)")
-                                }
-                            }
-                        }) {
-                            Text(isArts ? "Arts" : "Loop")
-                                .font(.system(size: 34, weight: .bold))
-                                .foregroundStyle(Color.appLightGray)
-                                .overlay(
-                                    ShimmerEffect()
-                                        .id(shimmerID)
-                                        .mask(
-                                            Text(isArts ? "Arts" : "Loop")
-                                                .font(.system(size: 34, weight: .bold))
-                                        )
-                                )
-                        }
-                    }
-                    
-                    Spacer()
-                    
-                    Button(action: {}) {
-                        Image(systemName: "magnifyingglass")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 26, height: 22)
-                    }
-                    .foregroundStyle(.primary)
+        TabView(selection: $selectedTab) {
+            GalleryView()
+                .tabItem {
+                    Image(systemName: "photo.stack.fill")
+                    Text("Gallery")
                 }
-                .padding(.horizontal)
-                .padding(.top, 8)
-                
-                StoryStatusView(stories: StoryStatus.sampleData)
-                    .padding(.top, 10)
-                Divider()
-                Spacer()
-                // Add your main content here
-            }
-            .navigationBarHidden(true)
+                .tag(0)
+            
+            ActivitiesView()
+                .tabItem {
+                    Image(systemName: "heart")
+                    Text("Activities")
+                }
+                .tag(1)
+            
+            EmotionView()
+                .tabItem {
+                    Image(systemName: "pencil.and.outline")
+                    Text("Emotion")
+                }
+                .tag(2)
+            
+            CalendarView()
+                .tabItem {
+                    Image(systemName: "calendar")
+                    Text("Calendar")
+                }
+                .tag(3)
+            
+            ProfileView()
+                .tabItem {
+                    Image(systemName: "face.dashed")
+                    Text("Profile")
+                }
+                .tag(4)
         }
+        .tint(.primary)
     }
 }
 
