@@ -19,7 +19,7 @@ struct IconName: View {
                 if UIImage(systemName: icon) != nil {
                     // SF Symbol with circular blur and iconColor
                     Circle()
-                        .foregroundStyle(.ultraThinMaterial)
+                        .foregroundStyle(Color.gray.opacity(0.4))
                         .overlay {
                             Image(systemName: icon)
                                 .resizable()
@@ -27,10 +27,8 @@ struct IconName: View {
                                 .frame(width: 15, height: 15)
                                 .foregroundColor(iconColor) // Apply color here
                                 .padding()
-                                .standOutShadow() // 🔥 standsout
                         }
                         .frame(width: 28, height: 28)
-                        .standOutShadow() // 🔥 standsout
                 } else {
                     // Asset image (e.g., profile image)
                     Circle()
@@ -43,7 +41,6 @@ struct IconName: View {
                                 .padding(0.49)
                         }
                         .frame(width: 28, height: 28)
-                        .standOutShadow() // 🔥 standsout
                 }
             }
             .padding(.horizontal, 3.43)
@@ -56,26 +53,32 @@ struct IconName: View {
                     .tracking(0.2)
                     .foregroundStyle(.white)
                     .lineLimit(1)
-                    .standOutShadow() // 🔥 standsout
+                    .shadow(color: .black.opacity(0.2), radius: 1, x: 3, y: 1)
+
             }
             .padding(.leading, 3)
             .padding(.trailing, 17)
             .padding(.vertical, 10)
         }
-        .background {
-            RoundedRectangle(cornerRadius: 40)
-                .fill(.ultraThinMaterial)
-                .progressiveBlur(radius: 10)
-        }
+        .background(TransparentBlurView().clipShape(RoundedRectangle(cornerRadius: 40)))
+        .background(Color.white.opacity(0.2).clipShape(RoundedRectangle(cornerRadius: 40)))
     }
 }
 
 // MARK: - Preview
 #Preview(traits: .sizeThatFitsLayout) {
-    HStack {
-        IconName(icon: "location.fill", name: "Las Vegas, NV", iconColor: Color.appPrimary)
-        IconName(icon: "profile1", name: "Sori")
+    ZStack {
+        Image("Art1")
+            .resizable()
+            .scaledToFit()
+        TransparentBlurView()
+            .scaledToFill()
+
+        HStack {
+            IconName(icon: "location.fill", name: "Las Vegas, NV", iconColor: Color.appPrimary)
+            IconName(icon: "profile1", name: "Sori")
+        }
+        .padding()
+//        .background(.black)
     }
-    .padding()
-    .background(.black)
 }

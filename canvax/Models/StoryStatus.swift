@@ -38,13 +38,13 @@ enum StrokeStyle {
 // Sample data
 extension StoryStatus {
     static let sampleData: [StoryStatus] = [
-        StoryStatus(name: "leo", imageName: "Art • Profile 2", isViewed: false, strokeStyle: .dashed(dashLength: 8)),
-        StoryStatus(name: "kova", imageName: "Art • Profile 3", isViewed: false, strokeStyle: .dashed(dashLength: 30)),
-        StoryStatus(name: "Flyo", imageName: "Art • Profile 1", isViewed: false, strokeStyle: .dashed(dashLength: 19)),
-        StoryStatus(name: "Zyn", imageName: "Art • Profile 2", isViewed: false, strokeStyle: .dashed(dashLength: 28)),
-        StoryStatus(name: "mik", imageName: "Art • Profile 3", isViewed: false, strokeStyle: .dashed(dashLength: 8)),
+        StoryStatus(name: "leo", imageName: "Art • Profile 2", isViewed: false, strokeStyle: .solid),
+        StoryStatus(name: "kova", imageName: "Art • Profile 3", isViewed: false, strokeStyle: .solid),
+        StoryStatus(name: "Flyo", imageName: "Art • Profile 1", isViewed: false, strokeStyle: .solid),
+        StoryStatus(name: "Zyn", imageName: "Art • Profile 2", isViewed: false, strokeStyle: .solid),
+        StoryStatus(name: "mik", imageName: "Art • Profile 3", isViewed: false, strokeStyle: .solid),
         StoryStatus(name: "rom", imageName: "Art • Profile 1", isViewed: false, strokeStyle: .solid),
-        StoryStatus(name: "lisa", imageName: "Art • Profile 1", isViewed: false, strokeStyle: .dashed(dashLength: 19)),
-        StoryStatus(name: "neo", imageName: "Art • Profile 2", isViewed: false, strokeStyle: .dashed(dashLength: 8))
+        StoryStatus(name: "lisa", imageName: "Art • Profile 1", isViewed: false, strokeStyle: .solid),
+        StoryStatus(name: "neo", imageName: "Art • Profile 2", isViewed: false, strokeStyle: .solid)
     ]
 } 

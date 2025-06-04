@@ -15,6 +15,8 @@ struct JournalTitle: View {
             .font(.system(size: 12))
             .tracking(0.24)
             .foregroundStyle(.white)
+            .shadow(color: .black.opacity(0.1), radius: 1, x: 3, y: 1)
+
         
     }
 }

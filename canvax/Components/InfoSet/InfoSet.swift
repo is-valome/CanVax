@@ -18,13 +18,15 @@ struct InfoSet: View {
     var body: some View {
         VStack(alignment: .leading){
             HStack() {
-                IconName(icon: "location.fill", name: location, iconColor: Color.appPrimary)
-                Spacer()
-                IconName(icon: "profile1", name: artist)
+                HStack {
+                    IconName(icon: "location.fill", name: location, iconColor: Color.appPrimary)
+                    IconName(icon: "profile1", name: artist)
+                }
                 Spacer()
                 // IconOnly
                 HStack {
-                    IconOnly(icononly: "plus.square.fill.on.square.fill")
+                    IconOnly(icononly: "plus.circle")
+                    Spacer().frame(width: 10)
                     IconOnly(icononly: "heart.fill")
                 }
             }

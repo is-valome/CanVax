@@ -21,14 +21,19 @@ struct StoryStatusView: View {
                                     ),
                                     style: story.strokeStyle.style
                                 )
-                                .frame(width: 101, height: 101)
+                                .frame(width: 101.19, height: 101.19)
 
                             // MARK: - Story Thumbnail
                             Image(story.imageName)
                                 .resizable()
                                 .scaledToFill()
-                                .frame(width: 101, height: 101)
+                                .frame(width: 93, height: 93)
                                 .clipShape(Circle())
+                                .overlay(
+                                    Circle()
+                                        .stroke(Color.appStrokeCircle, lineWidth: 0.42)
+                                )
+
                         }
 
                         // MARK: - Story Name
@@ -37,18 +42,17 @@ struct StoryStatusView: View {
                             .foregroundColor(.primary)
                             .lineLimit(1)
                             .tracking(0.4)
-                            .padding(.vertical, 4)
                     }
                     .padding(.horizontal, 6.07)
                     .padding(.vertical, 5.4)
                 }
             }
-            .padding(.leading, 7)
-            .padding(.vertical, 10)
         }
     }
 }
 
 #Preview("⭐️ Story Thumbnails", traits: .sizeThatFitsLayout) {
     StoryStatusView(stories: StoryStatus.sampleData)
+        .padding(.leading, 7)
+        .padding(.vertical, 10)
 }

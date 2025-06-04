@@ -10,8 +10,8 @@ import SwiftUI
 struct StandOutShadow: ViewModifier {
     func body(content: Content) -> some View {
         content
-            .shadow(color: .black.opacity(0.2), radius: 4, x: 0, y: 2) // soft shadow
-            .shadow(color: .white.opacity(0.6), radius: 1, x: 0, y: 0) // subtle highlight
+            .shadow(color: .black.opacity(0.2), radius: 1, x: 0, y: 2) // soft shadow
+            .shadow(color: .black.opacity(0.2), radius: 1, x: 0, y: 2) // subtle highlight
     }
 }
 

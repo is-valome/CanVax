@@ -20,7 +20,7 @@ struct IconOnly: View {
                     .frame(width: 25, height: 25)
                     .foregroundColor(.white) // Apply color here
                     .padding()
-                    .standOutShadow() // 🔥 standsout
+                    .shadow(color: .black.opacity(0.3), radius: 3, x: 0, y: 2)
             }
             .frame(width: 35, height: 35)
     }
@@ -29,6 +29,7 @@ struct IconOnly: View {
 #Preview(traits: .sizeThatFitsLayout) {
     HStack {
         IconOnly(icononly: "plus.square.fill.on.square.fill")
+        Spacer().frame(width: 10)
         IconOnly(icononly: "heart.fill")
     }
     .padding()

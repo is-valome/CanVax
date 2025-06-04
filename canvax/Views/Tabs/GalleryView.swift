@@ -43,7 +43,7 @@ struct GalleryView: View {
                         }
                         
                         Spacer()
-                        
+                                                
                         Button(action: {}) {
                             Image(systemName: "magnifyingglass")
                                 .resizable()
@@ -56,47 +56,18 @@ struct GalleryView: View {
                     .padding(.top, 8)
                     
                     StoryStatusView(stories: StoryStatus.sampleData)
-                        .padding(.top, 10)
+                        .padding(.leading, 7)
+                        .padding(.vertical, 10)
+                    
                     Divider()
+                        .frame(height: 0.5) // reduce thickness
+                        .foregroundStyle(Color.strokeCircle)
+                    // MAIN CODE STARTS FROM HERE
+                    // Horizontal scrolling couresel art posts with dynamic height
                     
-                    // Horizontal scrolling art posts with dynamic height
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(spacing: 20) {
-                            ForEach(ArtPost.sampleData) { art in
-                                ArtsPostView(art: art)                            }
-                        }
-                        .padding()
-                        .background(
-                            GeometryReader { scrollGeometry in
-                                Color.clear.preference(
-                                    key: ScrollOffsetPreferenceKey.self,
-                                    value: scrollGeometry.frame(in: .named("scroll")).minX
-                                )
-                            }
-                        )
-                    }
-                    .coordinateSpace(name: "scroll")
-                    .simultaneousGesture(
-                        DragGesture(minimumDistance: 0)
-                            .onChanged { _ in
-                                if !isScrolling {
-                                    isScrolling = true
-                                    ScrollHapticManager.shared.scroll()
-                                }
-                            }
-                            .onEnded { _ in
-                                isScrolling = false
-                            }
-                    )
-                    .onPreferenceChange(ScrollOffsetPreferenceKey.self) { value in
-                        let threshold: CGFloat = 20
-                        if abs(value - lastScrollOffset) > threshold {
-                            ScrollHapticManager.shared.scroll()
-                            lastScrollOffset = value
-                        }
-                    }
-                    
-                    Spacer()
+                    ArtsPostView(art:  ArtPost.sampleData[0])
+//                    Spacer()
+
                 }
             }
             .navigationBarHidden(true)
