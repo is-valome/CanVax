@@ -19,7 +19,7 @@ struct InfoSet: View {
         VStack(alignment: .leading){
             HStack() {
                 HStack {
-                    IconName(icon: "location.fill", name: location, iconColor: Color.appPrimary)
+                    IconName(icon: "location.fill", name: location, iconColor: Color.white)
                     IconName(icon: "profile1", name: artist)
                 }
                 Spacer()

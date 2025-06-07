@@ -5,6 +5,8 @@ struct GalleryView: View {
     @State private var shimmerID = UUID()
     @State private var lastScrollOffset: CGFloat = 0
     @State private var isScrolling = false
+    @State private var showSignUpSheet = false
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         NavigationStack {
@@ -15,6 +17,9 @@ struct GalleryView: View {
                         HStack {
                             Text("Gallery •")
                                 .font(.system(size: 34, weight: .bold))
+                                .onTapGesture {
+                                    showSignUpSheet = true
+                                }
                             Button(action: {
                                 print("🔍 DEBUG: Button tapped - Current state: \(isArts ? "Arts" : "Loop")")
                                 ScrollHapticManager.shared.light()
@@ -44,7 +49,9 @@ struct GalleryView: View {
                         
                         Spacer()
                                                 
-                        Button(action: {}) {
+                        Button(action: {
+                            showSignUpSheet = true
+                        }) {
                             Image(systemName: "magnifyingglass")
                                 .resizable()
                                 .scaledToFit()
@@ -71,6 +78,11 @@ struct GalleryView: View {
                 }
             }
             .navigationBarHidden(true)
+            .sheet(isPresented: $showSignUpSheet) {
+                SignUpSheetsView()
+                    .presentationDetents([.height(527)])
+                    .presentationDragIndicator(.visible)
+            }
         }
     }
 }

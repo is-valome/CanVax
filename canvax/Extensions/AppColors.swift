@@ -16,7 +16,8 @@ extension Color {
     static let appLightGray = Color(lightGrayM) // #D9D9D9
     static let appMediumGray = Color(mediumGrayM) // #CACACA
     static let appStrokeCircle = Color(strokeCircle) // #D1D1D1
-    static let appLinearAsh = Color(linearMAsh) // #8C8C8C Opaccity %1
-    static let appLinearBlack = Color(linearMBlack) // #0D0D0D Opacity 50%
+    static let appLinearAsh = Color(linearMAsh) // #8C8C8C
+    static let appLinearBlack = Color(linearMBlack) // #0D0D0D
+    static let appcircleAsh = Color(ashCircleM) // #F3F4F6
     // Add more if needed
 }
