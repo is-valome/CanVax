@@ -13,9 +13,9 @@ Created by **Valome (Valentine Chimerem Omeje)**
 
 ---
 
-## 🎬 Quick Start Demo
+## 🎬 Figma UI Kit
 
-> Coming soon: Screenshots and video preview
+> [CanVax UIKit](https://www.figma.com/community/file/1514312932236784293)
 
 ---
 
