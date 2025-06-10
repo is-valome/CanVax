@@ -26,8 +26,8 @@ struct AddFriendsProfileView: View {
                             RoundedRectangle(cornerRadius: 40)
                                 .strokeBorder(colorScheme == .dark ? Color(hex: "414141") : Color.white, lineWidth: 9, antialiased: true)
                                 .shadow( // <- moved here
-                                      color: colorScheme == .dark ? Color.black.opacity(0.5) : Color.black.opacity(0.2),
-                                      radius: 15, x: 0, y: 5
+                                      color: colorScheme == .dark ? Color.black.opacity(0.5) : Color.black.opacity(0.1),
+                                      radius: 5, x: 0, y: 1
                                   )
                         )
                 }

@@ -156,9 +156,6 @@ struct SignUpSheetsView: View {
                 .padding()
             }
         }
-        .navigationDestination(isPresented: $showAcceptView) {
-            AcceptView()
-        }
     }
 
     private func startMarqueeAnimation() {
@@ -174,4 +171,3 @@ struct SignUpSheetsView: View {
 #Preview {
     SignUpSheetsView(showSignUpSheet: .constant(true), showAcceptView: .constant(false))
 }
-

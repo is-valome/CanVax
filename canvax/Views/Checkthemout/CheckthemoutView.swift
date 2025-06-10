@@ -11,6 +11,7 @@ struct CheckthemoutView: View {
     @Environment(\.colorScheme) var colorScheme
     @Environment(\.dismiss) private var dismiss
     @State private var showSkipAlert = false
+    @State private var showExitAlert = false
     @State private var hasFollowedFriends = false
     
     var body: some View {
@@ -21,7 +22,7 @@ struct CheckthemoutView: View {
                     let impact = UIImpactFeedbackGenerator(style: .medium)
                     impact.impactOccurred()
                     pd_print("Close button tapped")
-                    dismiss()
+                    showExitAlert = true
                 }) {
                     HStack {
                         Image(systemName: "xmark")
@@ -80,6 +81,20 @@ struct CheckthemoutView: View {
                 }
             }
             .padding(10)
+        }
+        .alert("Do you want to stop the SetUp of you Account to get to use CanVax that fast 🤣", isPresented: $showExitAlert) {
+            Button("No", role: .cancel) { }
+            Button("Yes", role: .destructive) {
+                dismiss()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                    if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                       let window = windowScene.windows.first {
+                        window.rootViewController = UIHostingController(rootView: MainScreen())
+                    }
+                }
+            }
+        } message: {
+            Text("")
         }
         .alert("It will be nice if you follow some of your friends ☺️", isPresented: $showSkipAlert) {
             Button("Skip", role: .destructive) {
