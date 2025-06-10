@@ -9,6 +9,9 @@ import SwiftUI
 
 struct SignUpSheetsView: View {
     @Environment(\.colorScheme) var colorScheme // 👈 Detect light/dark mode
+    @Environment(\.dismiss) private var dismiss
+    @Binding var showSignUpSheet: Bool
+    @Binding var showAcceptView: Bool
     
     private let letters = ["•","C", "A", "N", "V", "A", "X", " ", "A R T", " ", "T H A T", " ", "U N D E R S T A N D S", " ", "Y O U"]
     private let marqueeLetters: [String]
@@ -16,7 +19,9 @@ struct SignUpSheetsView: View {
     @State private var scrollOffset: CGFloat
     @State private var singlePassWidth: CGFloat
 
-    init() {
+    init(showSignUpSheet: Binding<Bool>, showAcceptView: Binding<Bool>) {
+        self._showSignUpSheet = showSignUpSheet
+        self._showAcceptView = showAcceptView
         self.marqueeLetters = letters + letters + letters
         _scrollOffset = State(initialValue: 0)
         _singlePassWidth = State(initialValue: 0)
@@ -96,12 +101,18 @@ struct SignUpSheetsView: View {
                 VStack {
                     SignUpButton(logo: "apple.logo", buttonText: "Sign up with Apple", action:  {
                         pd_print("Tapped Apple Sign Up")
+                        showSignUpSheet = false
+                        showAcceptView = true
                     }, platform: nil)
                     SignUpButton(logo: "google_canvax", buttonText: "Sign up with Google", action:  {
                         pd_print("Tapped Google Login to Acces CanVax Account")
+                        showSignUpSheet = false
+                        showAcceptView = true
                     }, platform: "google")
                     SignUpButton(logo: "instagram_canvax", buttonText: "Sign up with Instagram", action:  {
                         pd_print("Tapped Instagram Login to Access CanVax Account")
+                        showSignUpSheet = false
+                        showAcceptView = true
                     }, platform: "instagram")
                 }
                 .padding()
@@ -145,6 +156,9 @@ struct SignUpSheetsView: View {
                 .padding()
             }
         }
+        .navigationDestination(isPresented: $showAcceptView) {
+            AcceptView()
+        }
     }
 
     private func startMarqueeAnimation() {
@@ -158,6 +172,6 @@ struct SignUpSheetsView: View {
 }
 
 #Preview {
-    SignUpSheetsView()
+    SignUpSheetsView(showSignUpSheet: .constant(true), showAcceptView: .constant(false))
 }
 

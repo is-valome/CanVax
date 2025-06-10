@@ -9,6 +9,10 @@ struct ArtPost: Identifiable {
     let likes: Int
     let comments: Int
     let shares: Int
+    let bio: String
+    let profileImage: String
+    let followers: Int
+    let artsCount: Int
 }
 
 // Sample data
@@ -21,7 +25,11 @@ extension ArtPost {
             location: "New York, NY",
             likes: 1243,
             comments: 89,
-            shares: 45
+            shares: 45,
+            bio: "Journaling is my passion, but I've found that my art speaks louder than words. Somewhere within each piece lies a hidden journal.",
+            profileImage: "friend1",
+            followers: 212,
+            artsCount: 22
         ),
         ArtPost(
             imageName: "Art3",
@@ -30,7 +38,11 @@ extension ArtPost {
             location: "Los Angeles, CA",
             likes: 892,
             comments: 67,
-            shares: 34
+            shares: 34,
+            bio: "Colors are my therapy, each stroke a step towards healing. My art is a journey through emotions, painted in vibrant hues.",
+            profileImage: "friend2",
+            followers: 156,
+            artsCount: 18
         ),
         ArtPost(
             imageName: "Art2",
@@ -39,7 +51,11 @@ extension ArtPost {
             location: "Miami, FL",
             likes: 1567,
             comments: 123,
-            shares: 78
+            shares: 78,
+            bio: "Art is my voice when words fall short. Every canvas tells a story of resilience and hope.",
+            profileImage: "friend3",
+            followers: 289,
+            artsCount: 31
         ),
         ArtPost(
             imageName: "Art4",
@@ -48,7 +64,11 @@ extension ArtPost {
             location: "Chicago, IL",
             likes: 2341,
             comments: 156,
-            shares: 92
+            shares: 92,
+            bio: "Transforming pain into power through bold strokes and vibrant colors. My art is my armor.",
+            profileImage: "friend1",
+            followers: 445,
+            artsCount: 27
         ),
         ArtPost(
             imageName: "Art5",
@@ -57,7 +77,11 @@ extension ArtPost {
             location: "Seattle, WA",
             likes: 1892,
             comments: 145,
-            shares: 67
+            shares: 67,
+            bio: "Dancing between dreams and reality, my art captures the whispers of the soul in every brushstroke.",
+            profileImage: "friend2",
+            followers: 178,
+            artsCount: 15
         ),
         ArtPost(
             imageName: "Art6",
@@ -66,7 +90,11 @@ extension ArtPost {
             location: "Austin, TX",
             likes: 2156,
             comments: 178,
-            shares: 89
+            shares: 89,
+            bio: "Abstract art is my language of emotions, where chaos meets harmony in a dance of colors.",
+            profileImage: "friend3",
+            followers: 334,
+            artsCount: 24
         ),
         ArtPost(
             imageName: "Art7",
@@ -75,7 +103,11 @@ extension ArtPost {
             location: "Portland, OR",
             likes: 1678,
             comments: 134,
-            shares: 56
+            shares: 56,
+            bio: "Watercolors flow like dreams, each painting a window into a world of endless possibilities.",
+            profileImage: "friend1",
+            followers: 267,
+            artsCount: 19
         ),
         ArtPost(
             imageName: "Art8",
@@ -84,7 +116,11 @@ extension ArtPost {
             location: "Boston, MA",
             likes: 1987,
             comments: 167,
-            shares: 78
+            shares: 78,
+            bio: "City life inspires my art, where urban chaos meets artistic harmony in every piece.",
+            profileImage: "friend2",
+            followers: 198,
+            artsCount: 16
         ),
         ArtPost(
             imageName: "Art9",
@@ -93,7 +129,11 @@ extension ArtPost {
             location: "Denver, CO",
             likes: 2456,
             comments: 189,
-            shares: 94
+            shares: 94,
+            bio: "Nature's beauty flows through my brush, bringing the outdoors to life on canvas.",
+            profileImage: "friend3",
+            followers: 389,
+            artsCount: 28
         ),
         ArtPost(
             imageName: "Art10",
@@ -102,7 +142,11 @@ extension ArtPost {
             location: "San Francisco, CA",
             likes: 2789,
             comments: 234,
-            shares: 112
+            shares: 112,
+            bio: "Where technology meets creativity, I blend digital and traditional art to create new worlds.",
+            profileImage: "friend1",
+            followers: 512,
+            artsCount: 35
         ),
         ArtPost(
             imageName: "Art11",
@@ -111,7 +155,11 @@ extension ArtPost {
             location: "Nashville, TN",
             likes: 1678,
             comments: 145,
-            shares: 67
+            shares: 67,
+            bio: "Emotions dance across my canvas, telling stories of life's beautiful complexities.",
+            profileImage: "friend2",
+            followers: 223,
+            artsCount: 21
         )
     ]
 } 

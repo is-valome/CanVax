@@ -6,6 +6,7 @@ struct GalleryView: View {
     @State private var lastScrollOffset: CGFloat = 0
     @State private var isScrolling = false
     @State private var showSignUpSheet = false
+    @State private var showAcceptView = false
     @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
@@ -79,9 +80,12 @@ struct GalleryView: View {
             }
             .navigationBarHidden(true)
             .sheet(isPresented: $showSignUpSheet) {
-                SignUpSheetsView()
+                SignUpSheetsView(showSignUpSheet: $showSignUpSheet, showAcceptView: $showAcceptView)
                     .presentationDetents([.height(527)])
                     .presentationDragIndicator(.visible)
+            }
+            .fullScreenCover(isPresented: $showAcceptView) {
+                AcceptView()
             }
         }
     }
